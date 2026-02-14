@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <main class="stage">
+    <section class="envelope" id="envelope" data-state="sealed" aria-label="Sobre con carta">
+      <div class="env env--back" aria-hidden="true"></div>
+
+      <div class="flap" aria-hidden="true"></div>
+
+      <div class="side side--left" aria-hidden="true"></div>
+      <div class="side side--right" aria-hidden="true"></div>
+
+      <div class="memoryStack" id="memoryStack" data-active="letter">
+        
+        <article class="memo-card" data-type="letter" id="letter" role="article" aria-label="Carta" tabindex="0">
+          <div class="letter__paper">
+            <p class="letter__hi">Amor,</p>
+
+            <p>
+              Hoy no quería darte algo "genérico". Quería dejarte una carta chiquita,
+              hecha a mi manera, para recordarte que me haces bien.
+            </p>
+
+            <p>
+              Gracias por tus detalles, por tu paciencia, por tu risa y por estar incluso
+              en los días en que todo pesa. Me encanta lo que somos cuando nos elegimos.
+            </p>
+
+            <p>
+              Si tuviera que pedir un deseo, sería seguir construyendo contigo:
+              sin afán, sin perfección, pero con intención.
+            </p>
+
+            <p class="letter__sign">
+              Con amor,<br />
+              <span class="sig">— Tu Poeta Enamorado</span>
+            </p>
+          </div>
+        </article>
+
+        <section class="memo-card spotify-polaroid" data-type="song">
+          <div class="polaroid-frame">
+            <div class="polaroid-photo">
+              <img id="songCover" alt="Portada de la canción" />
+            </div>
+            
+            <div class="polaroid-info">
+              <div class="song-title" id="songTitle">Título de la canción</div>
+              <div class="song-artist" id="songArtist">Artista</div>
+              <button class="heart-btn" id="songLike" type="button" aria-label="Me gusta">♥</button>
+            </div>
+            
+            <div class="polaroid-player">
+              <div class="player-time">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">-0:00</span>
+              </div>
+              
+              <div class="player-bar" id="playerBar">
+                <div class="player-progress" id="songBarFill"></div>
+                <div class="player-handle" id="playerHandle"></div>
+              </div>
+              
+              <div class="player-controls">
+                <button class="ctrl-btn" id="songPrev" type="button" aria-label="Anterior">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                  </svg>
+                </button>
+                <button class="ctrl-btn ctrl-btn--play" id="songPlayBtn" type="button" aria-label="Reproducir">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <button class="ctrl-btn" id="songNext" type="button" aria-label="Siguiente">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <audio id="audio" preload="metadata"></audio>
+        </section>
+
+      </div>
+
+      <div class="env env--front" aria-hidden="true"></div>
+
+      <button class="seal" id="seal" type="button" aria-label="Sello">
+        <span class="seal__heart" aria-hidden="true">♥</span>
+      </button>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
